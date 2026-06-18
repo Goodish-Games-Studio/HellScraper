@@ -21,7 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			slot_selected = number_pressed
 
 
-
 func _process(delta: float) -> void:
 	if hotbar_full():
 		InventoryGlobal.full_hotbar = true
