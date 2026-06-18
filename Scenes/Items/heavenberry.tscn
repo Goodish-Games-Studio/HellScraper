@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b6i4d4g5ttqfk"]
+
+[ext_resource type="Script" uid="uid://cga4edfyw1e56" path="res://Scripts/Items/food.gd" id="1_e7isy"]
+[ext_resource type="Resource" uid="uid://bspg8a6o1ll2w" path="res://inventory/items/heavenberry.tres" id="2_e7isy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o32t"]
+albedo_color = Color(0.9999998, 0.8218547, 0.07065933, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7o32t"]
+material = SubResource("StandardMaterial3D_7o32t")
+radius = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjdhd"]
+radius = 1.0
+
+[node name="heavenberry" type="Node3D" unique_id=945283806]
+script = ExtResource("1_e7isy")
+item = ExtResource("2_e7isy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946379710]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_7o32t")
+
+[node name="collision" type="Area3D" parent="." unique_id=642974015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision" unique_id=570402964]
+shape = SubResource("SphereShape3D_gjdhd")

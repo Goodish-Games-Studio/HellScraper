@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://pggj6s1tu4lh"]
+
+[ext_resource type="Script" uid="uid://cga4edfyw1e56" path="res://Scripts/Items/food.gd" id="1_k5fni"]
+[ext_resource type="Resource" uid="uid://fqmva1jpdfa3" path="res://inventory/items/fire apple.tres" id="2_iu5cm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjdhd"]
+albedo_color = Color(0.8784314, 0.19215687, 0, 1)
+roughness = 0.55
+
+[sub_resource type="SphereMesh" id="SphereMesh_k5fni"]
+material = SubResource("StandardMaterial3D_gjdhd")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjdhd"]
+radius = 1.0
+
+[node name="FireApple" type="Node3D" unique_id=945283806]
+script = ExtResource("1_k5fni")
+item = ExtResource("2_iu5cm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946379710]
+mesh = SubResource("SphereMesh_k5fni")
+
+[node name="collision" type="Area3D" parent="." unique_id=642974015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision" unique_id=570402964]
+shape = SubResource("SphereShape3D_gjdhd")

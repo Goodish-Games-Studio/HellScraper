@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://eui1nlt3yn7n"]
+
+[ext_resource type="Script" uid="uid://cga4edfyw1e56" path="res://Scripts/Items/food.gd" id="1_yfrsn"]
+[ext_resource type="Resource" uid="uid://c67m1k001w0rd" path="res://inventory/items/rock.tres" id="2_yfrsn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o32t"]
+albedo_color = Color(0.9999998, 0.8218547, 0.07065933, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7o32t"]
+material = SubResource("StandardMaterial3D_7o32t")
+radius = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjdhd"]
+radius = 1.0
+
+[node name="rock" type="Node3D" unique_id=945283806]
+script = ExtResource("1_yfrsn")
+item = ExtResource("2_yfrsn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946379710]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_7o32t")
+
+[node name="collision" type="Area3D" parent="." unique_id=642974015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision" unique_id=570402964]
+shape = SubResource("SphereShape3D_gjdhd")
