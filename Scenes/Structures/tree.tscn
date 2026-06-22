@@ -24,7 +24,7 @@ radius = 0.25
 [sub_resource type="BoxShape3D" id="BoxShape3D_pvkao"]
 size = Vector3(0.6, 2, 0.6)
 
-[node name="Tree" type="Node3D" unique_id=1574695582 groups=["attackable"]]
+[node name="Tree" type="Node3D" unique_id=1574695582]
 script = ExtResource("1_65t6m")
 
 [node name="meshes" type="Node3D" parent="." unique_id=872626451]
@@ -43,7 +43,7 @@ mesh = SubResource("SphereMesh_x6trg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_pvkao")
 
-[node name="hitbox" type="Area3D" parent="." unique_id=1235760552]
+[node name="hitbox" type="Area3D" parent="." unique_id=1235760552 groups=["attackable"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=75742342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

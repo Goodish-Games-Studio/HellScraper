@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 	states(delta)
 	move(delta)
 	
+	attack()
+	
 	move_and_slide()
 
 
@@ -83,11 +85,11 @@ func move(delta):
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction and !PlayerGlobal.in_menu:
-		velocity.x = direction.x * current_speed
-		velocity.z = direction.z * current_speed
+		velocity.x = direction.x * 5.0
+		velocity.z = direction.z * 5.0
 	else:
-		velocity.x = move_toward(velocity.x, 0, current_speed)
-		velocity.z = move_toward(velocity.z, 0, current_speed)
+		velocity.x = move_toward(velocity.x, 0, 5.0)
+		velocity.z = move_toward(velocity.z, 0, 5.0)
 	
 	if input_dir.length() > 0.0 or spring.spring_length <  0.6:
 		rotation.y = lerp_angle(rotation.y, neck.global_rotation.y, 10.0 * delta)
@@ -103,9 +105,10 @@ func grav(delta):
 
 
 func attack():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and attackcast.get_collider():
+		print("try")
 		if attackcast.get_collider().is_in_group("attackable"):
-			attackcast.get_collider().attack(20)
+			attackcast.get_collider().get_parent().hit(20)
 
 
 func collect(item):

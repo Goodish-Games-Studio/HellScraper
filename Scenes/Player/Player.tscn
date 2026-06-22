@@ -40,10 +40,6 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_h54ih")
 collision_priority = 20.0
 floor_max_angle = 0.87266463
 script = ExtResource("1_rpqav")
-mouse_sens = null
-walk_speed = null
-sprint_speed = null
-crouch_speed = null
 
 [node name="stand_col" type="CollisionShape3D" parent="." unique_id=1500795523]
 shape = SubResource("CapsuleShape3D_7pt4t")
@@ -130,4 +126,6 @@ offset_bottom = 300.0
 [node name="Attackcast" type="RayCast3D" parent="." unique_id=396204938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 target_position = Vector3(0, 0, -1.5)
+collide_with_areas = true
+collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
