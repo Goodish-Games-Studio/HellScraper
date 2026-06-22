@@ -3,14 +3,28 @@
 [ext_resource type="Script" uid="uid://dxxuj26d35p8m" path="res://inventory/scripts/inventory_slot.gd" id="1_22dgf"]
 [ext_resource type="Texture2D" uid="uid://j6ujyeb4lwd" path="res://inventory/sprites/pencilslot.png" id="2_1llrf"]
 [ext_resource type="FontFile" uid="uid://ubogjsccr6d3" path="res://Fonts/bytebounce.medium.ttf" id="2_nsnbm"]
+[ext_resource type="Texture2D" uid="uid://u0c2u6v52scn" path="res://inventory/sprites/slot_selector.png" id="4_gjky6"]
 
 [node name="Inventory_slot" type="Panel" unique_id=1240867020]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(32, 32)
-offset_right = 32.0
-offset_bottom = 32.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 mouse_filter = 1
 script = ExtResource("1_22dgf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=815393057]
 texture = ExtResource("2_1llrf")
@@ -31,3 +45,18 @@ offset_right = 28.0
 offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("2_nsnbm")
 horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="." unique_id=454093177]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="highlight" type="Sprite2D" parent="." unique_id=77048460]
+self_modulate = Color(1, 1, 1, 0.3137255)
+texture = ExtResource("4_gjky6")
+centered = false
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

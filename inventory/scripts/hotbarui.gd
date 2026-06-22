@@ -50,6 +50,8 @@ func _process(delta: float) -> void:
 		if inventory.slots[slot_selected].amount < 1:
 			inventory.slots[slot_selected] = null
 	
+	InventoryGlobal.hot_selected = slot_selected
+	
 	#endregion
 
 

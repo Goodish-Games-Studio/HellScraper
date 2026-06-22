@@ -61,8 +61,10 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/selector" unique_id=1339490541]
+position = Vector2(16, 16)
 texture = ExtResource("2_vnyxa")
 centered = false
+offset = Vector2(-16, -16)
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=1127049560]
 layout_mode = 1
@@ -79,29 +81,55 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 9
 
-[node name="Inventory_slot1" parent="NinePatchRect/GridContainer" unique_id=719038167 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot1" parent="NinePatchRect/GridContainer" unique_id=719038167 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
 
-[node name="Inventory_slot2" parent="NinePatchRect/GridContainer" unique_id=1681916204 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot2" parent="NinePatchRect/GridContainer" unique_id=1681916204 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 1
 
-[node name="Inventory_slot3" parent="NinePatchRect/GridContainer" unique_id=1714845308 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot3" parent="NinePatchRect/GridContainer" unique_id=1714845308 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 2
 
-[node name="Inventory_slot4" parent="NinePatchRect/GridContainer" unique_id=1014866061 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot4" parent="NinePatchRect/GridContainer" unique_id=1014866061 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 3
 
-[node name="Inventory_slot5" parent="NinePatchRect/GridContainer" unique_id=1436392587 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot5" parent="NinePatchRect/GridContainer" unique_id=1436392587 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 4
 
-[node name="Inventory_slot6" parent="NinePatchRect/GridContainer" unique_id=1379976144 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot6" parent="NinePatchRect/GridContainer" unique_id=1379976144 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 5
 
-[node name="Inventory_slot7" parent="NinePatchRect/GridContainer" unique_id=366581040 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot7" parent="NinePatchRect/GridContainer" unique_id=366581040 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 6
 
-[node name="Inventory_slot8" parent="NinePatchRect/GridContainer" unique_id=1710339594 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot8" parent="NinePatchRect/GridContainer" unique_id=1710339594 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 7
 
-[node name="Inventory_slot9" parent="NinePatchRect/GridContainer" unique_id=1859376319 instance=ExtResource("3_nbgyc")]
+[node name="Inventory_slot9" parent="NinePatchRect/GridContainer" unique_id=1859376319 node_paths=PackedStringArray("selector_path") instance=ExtResource("3_nbgyc")]
 layout_mode = 2
+type = 1
+selector_path = NodePath("../../selector/Sprite2D")
+slot_num = 8

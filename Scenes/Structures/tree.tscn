@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://gynwm7xqxnrn"]
+
+[ext_resource type="Script" uid="uid://d0q1dvhst5idi" path="res://Scripts/structures/tree.gd" id="1_65t6m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6trg"]
+albedo_color = Color(0.23965898, 0.13507453, 6.016344e-08, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x6trg"]
+material = SubResource("StandardMaterial3D_x6trg")
+top_radius = 0.2
+bottom_radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15k1u"]
+albedo_color = Color(0, 0.35982078, 0.029177247, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x6trg"]
+material = SubResource("StandardMaterial3D_15k1u")
+radius = 1.0
+height = 1.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pvkao"]
+radius = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvkao"]
+size = Vector3(0.6, 2, 0.6)
+
+[node name="Tree" type="Node3D" unique_id=1574695582 groups=["attackable"]]
+script = ExtResource("1_65t6m")
+
+[node name="meshes" type="Node3D" parent="." unique_id=872626451]
+
+[node name="trunk" type="MeshInstance3D" parent="meshes" unique_id=88120453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_x6trg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="meshes" unique_id=1990443639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+mesh = SubResource("SphereMesh_x6trg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=186474468]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1927643193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_pvkao")
+
+[node name="hitbox" type="Area3D" parent="." unique_id=1235760552]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=75742342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_pvkao")

@@ -7,8 +7,9 @@ extends CharacterBody3D
 @onready var crouch_col: CollisionShape3D = $crouch_col
 @onready var crouchcast: RayCast3D = $crouchcast
 @onready var camera: Camera3D = $neck/camyaw/campitch/SpringArm3D/Camera3D
+@onready var attackcast: RayCast3D = $Attackcast
 
-@export var mouse_sens = 0.3
+@onready var mouse_sens = 0.3
 
 @export var walk_speed = 5.0
 @export var sprint_speed = 7.0
@@ -44,8 +45,8 @@ func _physics_process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	grav(delta)
-	move(delta)
 	states(delta)
+	move(delta)
 	
 	move_and_slide()
 
@@ -73,6 +74,9 @@ func states(delta):
 		else:
 			# Walking
 			current_speed = walk_speed
+	
+	else:
+		current_speed = walk_speed
 
 
 func move(delta):
@@ -96,6 +100,12 @@ func jump(delta):
 func grav(delta):
 	if not is_on_floor():
 		velocity.y -= GRAV * delta
+
+
+func attack():
+	if Input.is_action_just_pressed("attack"):
+		if attackcast.get_collider().is_in_group("attackable"):
+			attackcast.get_collider().attack(20)
 
 
 func collect(item):
