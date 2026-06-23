@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Muck 2.0"
 run/main_scene="uid://krj84v3gv5up"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
