@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 		jump(delta)
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if Input.is_action_just_pressed("esc"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	grav(delta)
 	states(delta)
