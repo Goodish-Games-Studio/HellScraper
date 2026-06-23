@@ -134,5 +134,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("13_fdnlq")
 text = "Join"
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=21492878]
+spawn_path = NodePath("../players")
+
+[node name="players" type="Node3D" parent="." unique_id=1328589427]
+
 [connection signal="pressed" from="Multiplayer ui/Panel/VBoxContainer/host" to="." method="host_game"]
 [connection signal="pressed" from="Multiplayer ui/Panel/VBoxContainer/join" to="." method="join_game"]

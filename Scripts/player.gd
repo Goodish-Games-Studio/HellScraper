@@ -29,6 +29,10 @@ var crouching_depth = -0.6
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if !is_multiplayer_authority():
+		return
+	
 	if PlayerGlobal.in_menu:
 		return
 	if event is InputEventMouseMotion:
@@ -39,6 +43,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_multiplayer_authority():
+		return
+	
 	if !PlayerGlobal.in_menu:
 		jump(delta)
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

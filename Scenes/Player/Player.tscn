@@ -26,15 +26,23 @@ bg_color = Color(0.8741287, 0.0662701, 0.32310572, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_ude3g")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_jmcll")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft8w5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wape"]
 bg_color = Color(0.3758529, 0.24379045, 0.13504705, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h54ih"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t26db"]
 bg_color = Color(0.86722386, 0.4875061, 0, 1)
 
 [sub_resource type="Theme" id="Theme_t26db"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_ft8w5")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_h54ih")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_4wape")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_t26db")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ude3g"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" unique_id=1889466807 groups=["player"]]
 collision_priority = 20.0
@@ -73,8 +81,6 @@ script = ExtResource("2_kyqiw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
 [node name="Hand" type="Node3D" parent="neck/camyaw" unique_id=703631028]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=692788343]
 
 [node name="interaction_zone" type="Area3D" parent="." unique_id=456142723 groups=["player"]]
 collision_layer = 2
@@ -129,3 +135,6 @@ target_position = Vector3(0, 0, -1.5)
 collide_with_areas = true
 collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=740241454]
+replication_config = SubResource("SceneReplicationConfig_ude3g")
