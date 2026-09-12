@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dp0m0arrjr60x" path="res://Scenes/Items/truck.tscn" id="10_k12tt"]
 [ext_resource type="PackedScene" uid="uid://fvho5if583dk" path="res://Scenes/Items/plum.tscn" id="11_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://gynwm7xqxnrn" path="res://Scenes/Structures/tree.tscn" id="12_6iyac"]
-[ext_resource type="FontFile" uid="uid://ubogjsccr6d3" path="res://Fonts/bytebounce.medium.ttf" id="13_fdnlq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -103,41 +102,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 [node name="Tree" parent="." unique_id=1574695582 instance=ExtResource("12_6iyac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="Multiplayer ui" type="Control" parent="." unique_id=477487448]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Multiplayer ui" unique_id=224283862]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Multiplayer ui/Panel" unique_id=82985397]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="host" type="Button" parent="Multiplayer ui/Panel/VBoxContainer" unique_id=705653653]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("13_fdnlq")
-text = "Host"
-
-[node name="join" type="Button" parent="Multiplayer ui/Panel/VBoxContainer" unique_id=466161677]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("13_fdnlq")
-text = "Join"
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=21492878]
-spawn_path = NodePath("../players")
-
 [node name="players" type="Node3D" parent="." unique_id=1328589427]
-
-[connection signal="pressed" from="Multiplayer ui/Panel/VBoxContainer/host" to="." method="host_game"]
-[connection signal="pressed" from="Multiplayer ui/Panel/VBoxContainer/join" to="." method="join_game"]

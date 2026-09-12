@@ -36,14 +36,6 @@ bg_color = Color(0.86722386, 0.4875061, 0, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_4wape")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_t26db")
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ude3g"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-
 [node name="Player" type="CharacterBody3D" unique_id=1889466807 groups=["player"]]
 collision_priority = 20.0
 floor_max_angle = 0.87266463
@@ -135,6 +127,3 @@ target_position = Vector3(0, 0, -1.5)
 collide_with_areas = true
 collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=740241454]
-replication_config = SubResource("SceneReplicationConfig_ude3g")

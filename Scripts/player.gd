@@ -24,10 +24,6 @@ const GRAV = 22
 var crouching_depth = -0.6
 
 
-#func _ready() -> void:
-#	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if !is_multiplayer_authority():
@@ -43,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if is_multiplayer_authority():
+	if !is_multiplayer_authority():
 		return
 	
 	if !PlayerGlobal.in_menu:
