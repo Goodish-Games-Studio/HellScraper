@@ -20,21 +20,12 @@ config/icon="res://icon.svg"
 Global="*uid://cktl7qqye73ej"
 PlayerGlobal="*uid://vyiyel8k3vrk"
 InventoryGlobal="*uid://db82ww283pw0m"
-MultiplayerGlobal="*uid://cp2li23y3u50a"
-NetworkTime="*uid://cnqdxyjptkfvp"
-NetworkTimeSynchronizer="*uid://5rmn2ik3kjo8"
-NetworkRollback="*uid://gas743comroj"
-NetworkEvents="*uid://bdmobxxptryj0"
-NetworkPerformance="*uid://cqgf7aqmjfoa3"
+Networking="*uid://cp2li23y3u50a"
 
 [display]
 
 window/size/always_on_top=true
 window/stretch/mode="viewport"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/netfox.internals/plugin.cfg", "res://addons/netfox/plugin.cfg")
 
 [input]
 
@@ -119,3 +110,8 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[steam]
+
+initialization/app_data/app_id=480
+initialization/processes/initialize_on_startup=true
