@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://krj84v3gv5up"]
 
-[ext_resource type="PackedScene" uid="uid://cr818gl2seb8o" path="res://Scenes/Player/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bu4gsbymuc1e8" path="res://Scenes/main.gd" id="1_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://pggj6s1tu4lh" path="res://Scenes/Items/Fire Apple.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bg3rw3okwld8b" path="res://Scenes/Items/banana.tscn" id="3_8gbba"]
@@ -58,9 +57,6 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=762134044]
 shape = SubResource("BoxShape3D_jjgbg")
 
-[node name="Player" parent="." unique_id=1889466807 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
 [node name="Items" type="Node" parent="." unique_id=1026797906]
 
 [node name="FireApple" parent="Items" unique_id=945283806 instance=ExtResource("2_bo1nx")]
@@ -103,3 +99,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="players" type="Node3D" parent="." unique_id=1328589427]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1698427555]
+
+[node name="Host" type="Button" parent="CanvasLayer" unique_id=1816508211]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "HOST "
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1816486925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 0)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=235777717]
+_spawnable_scenes = PackedStringArray("uid://cr818gl2seb8o")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="CanvasLayer/Host" to="." method="_on_host_pressed"]
+[connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]

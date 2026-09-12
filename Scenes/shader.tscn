@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bf3020hhchvxj"]
+
+[ext_resource type="Shader" uid="uid://vyxky3b5cap" path="res://Shaders/spatialquant.gdshader" id="1_bgad1"]
+[ext_resource type="Texture2D" uid="uid://c085gxlnxn0dl" path="res://Assets/FAN MAc cool.png" id="2_bgad1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bkbk4"]
+render_priority = 0
+shader = ExtResource("1_bgad1")
+shader_parameter/TwixelAngle = 45.0
+shader_parameter/PixelSize = 1.0
+shader_parameter/FogColor = Color(0, 0, 0, 1)
+shader_parameter/FogStart = 25.0
+shader_parameter/FogEnd = 300.0
+shader_parameter/Quantize = true
+shader_parameter/PaletteTexture = ExtResource("2_bgad1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bkbk4"]
+material = SubResource("ShaderMaterial_bkbk4")
+flip_faces = true
+
+[node name="shader" type="Node3D" unique_id=420880872]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1023506487]
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_bkbk4")

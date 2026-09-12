@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cij87mv01qkft" path="res://Scripts/Player/spring_arm_3d.gd" id="2_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://crkk8w6oj7h17" path="res://inventory/hotbar.tscn" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://widn0flbby32" path="res://inventory/inventory.tscn" id="3_ude3g"]
+[ext_resource type="PackedScene" uid="uid://bf3020hhchvxj" path="res://Scenes/shader.tscn" id="5_jmcll"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7pt4t"]
 
@@ -35,6 +36,14 @@ bg_color = Color(0.86722386, 0.4875061, 0, 1)
 [sub_resource type="Theme" id="Theme_t26db"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_4wape")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_t26db")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jmcll"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" unique_id=1889466807 groups=["player"]]
 collision_priority = 20.0
@@ -127,3 +136,8 @@ target_position = Vector3(0, 0, -1.5)
 collide_with_areas = true
 collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="shader" parent="." unique_id=420880872 instance=ExtResource("5_jmcll")]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=242349915]
+replication_config = SubResource("SceneReplicationConfig_jmcll")

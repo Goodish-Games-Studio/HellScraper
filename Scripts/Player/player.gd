@@ -24,6 +24,10 @@ const GRAV = 22
 var crouching_depth = -0.6
 
 
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if !is_multiplayer_authority():
